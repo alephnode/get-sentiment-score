@@ -1,0 +1,25 @@
+{
+  "name": "get-sentiment-score",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon --watch 'src/**/*' --exec 'ts-node' src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "@types/jest": "^24.0.18",
+    "ts-jest": "^24.0.2",
+    "@types/node": "^12.6.9",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
