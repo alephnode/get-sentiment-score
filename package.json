@@ -2,13 +2,15 @@
   "name": "get-sentiment-score",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "nodemon": "^1.19.4"
   },
   "scripts": {
     "test": "npx jest",
-    "start": "npx nodemon --watch 'src/**/*' --exec 'ts-node' src/index.ts"
+    "build": "tsc",
+    "start": "npx nodemon --watch 'src/**/*' --exec 'ts-node' src/index.ts",
+    "deploy": "./deploy.sh"
   },
   "keywords": [],
   "author": "",

@@ -5,7 +5,7 @@ interface SentimentResponse {
   body: string;
 }
 
-const getSentimentScore: Handler = (event, context: Context, cb: Callback) => {
+const handler: Handler = (event, context: Context, cb: Callback) => {
   const response: SentimentResponse = {
     statusCode: 200,
     body: "We live"
@@ -14,4 +14,4 @@ const getSentimentScore: Handler = (event, context: Context, cb: Callback) => {
   cb(null, response);
 };
 
-export { getSentimentScore }
+export { handler }
