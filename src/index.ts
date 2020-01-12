@@ -14,4 +14,4 @@ const handler: Handler = (event, context: Context, cb: Callback) => {
   cb(null, response);
 };
 
-export { handler }
+export { handler, SentimentResponse }
