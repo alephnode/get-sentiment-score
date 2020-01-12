@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
+    "aws-sdk": "^2.601.0",
     "nodemon": "^1.19.4"
   },
   "scripts": {
