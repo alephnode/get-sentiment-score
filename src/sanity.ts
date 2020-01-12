@@ -1,17 +1,17 @@
-import { Handler, Context, Callback } from 'aws-lambda';
+import { Handler, Context, Callback } from 'aws-lambda'
 
 interface SentimentResponse {
-  statusCode: number;
-  body: string;
+  statusCode: number
+  body: string
 }
 
 const handler: Handler = (event, context: Context, cb: Callback) => {
   const response: SentimentResponse = {
     statusCode: 200,
-    body: "We live"
-  };
+    body: 'We live'
+  }
 
-  cb(null, response);
-};
+  cb(null, response)
+}
 
 export { handler, SentimentResponse }

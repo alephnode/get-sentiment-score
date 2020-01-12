@@ -1,4 +1,4 @@
-import { Handler, Context, Callback } from 'aws-lambda'
+import { Handler } from 'aws-lambda'
 import AWS from 'aws-sdk'
 
 interface SentimentResponse {
@@ -6,7 +6,8 @@ interface SentimentResponse {
   body: string
 }
 
-const handler: Handler = (event, context: Context, cb: Callback) => {
+const handler: Handler = async event => {
+  // TODO: take in textlist from context params
   const params = {
     LanguageCode: 'en',
     TextList: ['I hate this']
@@ -17,10 +18,7 @@ const handler: Handler = (event, context: Context, cb: Callback) => {
     region: 'us-east-1'
   })
 
-  comprehend.batchDetectSentiment(params, (err, data) => {
-    if (err) console.log(err, err.stack)
-    else return cb(JSON.stringify(data.ResultList))
-  })
+  return await comprehend.batchDetectSentiment(params).promise()
 }
 
 export { handler, SentimentResponse }
