@@ -5,6 +5,7 @@ describe('Index tests', () => {
   it('responds with expected string', () =>
     handler(null, null, (_1, res: SentimentResponse) =>
       expect(res.body).toEqual("We live")
-    ));
+    )
+  );
 })
 
