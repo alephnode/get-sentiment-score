@@ -1,5 +1,5 @@
-import { getSentiment } from './getSentiment'
-import expectedResponse from './__mocks__/mockAWSResponse'
+import { getSentiment } from '../getSentiment'
+import expectedResponse from '../__mocks__/mockAWSResponse'
 
 describe('Index tests', () => {
   it('responds with expected string with valid params', async () => {

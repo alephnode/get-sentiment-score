@@ -1,4 +1,4 @@
-import { handler } from './index'
+import { handler } from '../index'
 
 describe('Index tests', () => {
   it('responds with expected string with valid params', async () => {

@@ -1,4 +1,4 @@
-import { handler, SanityResponse } from './sanity'
+import { handler, SanityResponse } from '../sanity'
 
 describe('Sanity tests', () => {
   it('passes canary', () => expect(true).toBe(true))
