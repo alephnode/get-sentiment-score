@@ -1,4 +1,4 @@
-cd dist/ && zip -rq sentiment.zip index.js
+rm -rf dist && yarn build && cd dist/ && zip -rq sentiment.zip .
 
 aws lambda update-function-code \
   --function-name getSentimentScore \
