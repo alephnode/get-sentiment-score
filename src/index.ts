@@ -1,24 +1,15 @@
 import { Handler } from 'aws-lambda'
-import AWS from 'aws-sdk'
+import { getSentiment } from './getSentiment'
 
-interface SentimentResponse {
-  statusCode: number
-  body: string
-}
-
-const handler: Handler = async event => {
-  // TODO: take in textlist from context params
-  const params = {
-    LanguageCode: 'en',
-    TextList: ['I hate this']
+type Data = {
+  details: {
+    text: string
   }
-
-  const comprehend = new AWS.Comprehend({
-    apiVersion: '2017-11-27',
-    region: 'us-east-1'
-  })
-
-  return await comprehend.batchDetectSentiment(params).promise()
 }
 
-export { handler, SentimentResponse }
+const handler: Handler = async (event: Data) => {
+  const params = event.details
+  return await getSentiment()
+}
+
+export { handler }

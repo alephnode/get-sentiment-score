@@ -1,9 +1,8 @@
-import { handler, SentimentResponse } from './index'
-import expectedResponse from './__mocks__/mockAWSResponse'
+import { handler } from './index'
 
 describe('Index tests', () => {
-  it('responds with expected string', async () => {
-    const res = await handler(null, null, null)
-    expect(res).toEqual(expectedResponse)
+  it('responds with expected string with valid params', async () => {
+    const res = await handler({ details: { text: 'hello' } }, null, null)
+    expect(res).toBeTruthy()
   })
 })

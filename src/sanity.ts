@@ -1,12 +1,12 @@
 import { Handler, Context, Callback } from 'aws-lambda'
 
-interface SentimentResponse {
+interface SanityResponse {
   statusCode: number
   body: string
 }
 
 const handler: Handler = (event, context: Context, cb: Callback) => {
-  const response: SentimentResponse = {
+  const response: SanityResponse = {
     statusCode: 200,
     body: 'We live'
   }
@@ -14,4 +14,4 @@ const handler: Handler = (event, context: Context, cb: Callback) => {
   cb(null, response)
 }
 
-export { handler, SentimentResponse }
+export { handler, SanityResponse }
