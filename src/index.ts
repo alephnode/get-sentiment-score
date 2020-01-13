@@ -1,6 +1,6 @@
 import { Handler } from 'aws-lambda'
 import { getSentiment } from './getSentiment'
-import { validateEvent } from './validateEvent'
+import { isValidEvent } from './validators/isValidEvent'
 import { invalidDataSupplied } from './responses/invalidDataSupplied'
 
 type SentimentEvent = {
@@ -10,7 +10,7 @@ type SentimentEvent = {
 }
 
 const handler: Handler = async (event: SentimentEvent) => {
-  if (!validateEvent(event)) return invalidDataSupplied
+  if (!isValidEvent(event)) return invalidDataSupplied
   const params = event.details
   return await getSentiment()
 }
