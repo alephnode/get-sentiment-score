@@ -8,7 +8,7 @@ interface SanityResponse {
 const handler: Handler = (event, context: Context, cb: Callback) => {
   const response: SanityResponse = {
     statusCode: 200,
-    body: 'Hello World'
+    body: 'Hello World!'
   }
 
   cb(null, response)
