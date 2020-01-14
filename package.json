@@ -8,7 +8,7 @@
     "nodemon": "^1.19.4"
   },
   "scripts": {
-    "test": "npx jest",
+    "test": "jest",
     "build": "tsc",
     "start": "npx nodemon --watch 'src/**/*' --exec 'ts-node' src/index.ts",
     "deploy": "./deploy.sh"
@@ -23,6 +23,7 @@
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
+    "tsc": "^1.20150623.0",
     "typescript": "^3.5.3"
   }
 }
