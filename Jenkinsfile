@@ -6,13 +6,12 @@ pipeline {
                 sh 'echo "Installing deps"'
                 sh 'npm install'
             }
-          }
-          stage('Test') {
+        }
+        stage('Test') {
             steps {
                 sh 'echo "Running tests"'
                 sh 'npm run test'
             }
-        }
         }
     }
 }
