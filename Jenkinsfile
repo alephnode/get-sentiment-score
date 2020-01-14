@@ -1,5 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:latest'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
     tools {nodejs "node"}
     stages {
         stage('Build') {
@@ -16,8 +23,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Running deploy script"'
-                sh 'npm run deploy'
+                timeout(time: 3, unit: 'MINUTES') {
+                    retry(5) {
+                        sh 'echo "Running tests"'
+                        sh './deploy.sh'
+                    }
+                }
             }
         }
     }
