@@ -16,20 +16,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                timeout(time: 3, unit: 'MINUTES') {
-                    sh 'echo "Running tests"'
-                    sh 'npm run test'
-                }
+                sh './test.sh'
             }
         }
         stage('Deploy') {
             steps {
-                timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
-                        sh 'echo "Running tests"'
-                        sh './deploy.sh'
-                    }
-                }
+                sh './deploy.sh'
             }
         }
     }
