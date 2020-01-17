@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'srmward/jenkins-aws:latest-2'
+            image 'srmward/jenkins-aws-2:latest'
         }
     }
     environment {
