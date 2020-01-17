@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'srmward/jenkins-aws-typescript:latest'
+            image 'alephnode/jenkins-aws-typescript:v1.0.0'
         }
     }
     environment {
@@ -12,17 +12,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Installing deps"'
+                sh 'echo "Installing dependencies"'
                 sh 'npm install'
             }
         }
         stage('Test') {
             steps {
+                sh 'echo "Running tests"'
                 sh 'npm run test'
             }
         }
         stage('Deploy') {
             steps {
+                sh 'echo "Deploying build"'
                 sh 'chmod +x deploy.sh'
                 sh './deploy.sh'
             }
