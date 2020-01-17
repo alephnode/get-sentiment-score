@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'srmward/jenkins-aws:latest'
+            image 'srmward/jenkins-aws:latest-2'
         }
     }
     environment {
@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'chmod +x deploy.sh'
                 sh './deploy.sh'
             }
         }
